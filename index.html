@@ -239,15 +239,29 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(135deg, #111827 0%, #064e3b 50%, #0f766e 100%);
+      background: #111827;
       overflow: hidden;
       padding-top: 80px;
+    }
+
+    .hero__bg-image {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=85') center center / cover no-repeat;
+      z-index: 0;
+    }
+    .hero__bg-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(17,24,39,0.88) 0%, rgba(6,78,59,0.82) 50%, rgba(15,118,110,0.78) 100%);
     }
 
     .hero__particles {
       position: absolute;
       inset: 0;
       overflow: hidden;
+      z-index: 1;
     }
     .hero__particles span {
       position: absolute;
@@ -276,6 +290,7 @@
     .hero__grid-bg {
       position: absolute;
       inset: 0;
+      z-index: 1;
       background-image:
         linear-gradient(rgba(16,185,129,0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(16,185,129,0.05) 1px, transparent 1px);
@@ -293,6 +308,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       animation: pulse-glow 6s ease-in-out infinite;
+      z-index: 1;
     }
 
     @keyframes pulse-glow {
@@ -1067,6 +1083,7 @@
   <main>
     <!-- Hero -->
     <section class="hero">
+      <div class="hero__bg-image"></div>
       <div class="hero__particles">
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
