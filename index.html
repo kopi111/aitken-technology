@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aitken Technology – IT Solutions, CCTV, Networking & Cybersecurity</title>
+  <meta name="description" content="Aitken Technology provides professional IT solutions including CCTV installation, network infrastructure, IT procurement, API security, and managed IT services.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aitken Technology – IT Solutions, CCTV, Networking & Cybersecurity">
+  <meta property="og:description" content="Professional IT solutions including CCTV, networking, cybersecurity, and IT procurement.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========== RESET & VARIABLES ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --accent-glow: rgba(59, 130, 246, 0.15);
+      --cyan: #06b6d4;
+      --green: #10b981;
+      --purple: #8b5cf6;
+      --orange: #f59e0b;
+      --red: #ef4444;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-400: #94a3b8;
+      --gray-500: #64748b;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1e293b;
+      --gray-900: #0f172a;
+      --white: #ffffff;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+      --shadow-glow: 0 0 30px rgba(59,130,246,0.2);
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--gray-700);
+      line-height: 1.7;
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(59,130,246,0.35);
+    }
+    .btn--primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(59,130,246,0.45);
+    }
+
+    .btn--outline {
+      border-color: rgba(255,255,255,0.4);
+      color: var(--white);
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+    .btn--outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    .btn--dark {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .btn--dark:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .btn--white {
+      background: var(--white);
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .btn--white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+    }
+
+    .label {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 60px;
+    }
+    .section-header h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--gray-500);
+    }
+
+    section { padding: 100px 0; }
+    section.section--sm { padding: 60px 0; }
+
+    /* ========== HEADER ========== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: var(--transition);
+    }
+    .header.scrolled {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 12px 0;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+    }
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    .header__logo svg { flex-shrink: 0; }
+    .header__logo span { color: var(--accent); }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+    .header__nav a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+    .header__nav a:hover { color: var(--white); }
+    .header__nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+    .header__nav a:hover::after { width: 100%; }
+
+    .header__cta .btn {
+      padding: 10px 24px;
+      font-size: 0.85rem;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 50%, #16213e 100%);
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero__particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .hero__particles span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(59,130,246,0.3);
+      border-radius: 50%;
+      animation: float-particle 15s infinite linear;
+    }
+    .hero__particles span:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; animation-duration: 20s; }
+    .hero__particles span:nth-child(2) { left: 20%; top: 80%; animation-delay: -3s; animation-duration: 18s; }
+    .hero__particles span:nth-child(3) { left: 35%; top: 40%; animation-delay: -5s; animation-duration: 22s; width: 6px; height: 6px; }
+    .hero__particles span:nth-child(4) { left: 55%; top: 15%; animation-delay: -7s; animation-duration: 16s; }
+    .hero__particles span:nth-child(5) { left: 70%; top: 65%; animation-delay: -2s; animation-duration: 25s; width: 5px; height: 5px; }
+    .hero__particles span:nth-child(6) { left: 85%; top: 30%; animation-delay: -9s; animation-duration: 19s; }
+    .hero__particles span:nth-child(7) { left: 50%; top: 90%; animation-delay: -4s; animation-duration: 21s; width: 3px; height: 3px; }
+    .hero__particles span:nth-child(8) { left: 90%; top: 75%; animation-delay: -11s; animation-duration: 17s; }
+
+    @keyframes float-particle {
+      0% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+    }
+
+    .hero__grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    .hero__glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse-glow 6s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 50px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 32px;
+      animation: fadeInDown 0.8s ease;
+    }
+    .hero__badge .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero__title {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: fadeInUp 0.8s ease;
+    }
+    .hero__title span {
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero__text {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    .hero__wave {
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      color: var(--white);
+      z-index: 2;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== STATS ========== */
+    .stats { background: var(--white); }
+    .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .stats__item {
+      text-align: center;
+      padding: 32px 20px;
+      border-radius: var(--radius-lg);
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      transition: var(--transition);
+    }
+    .stats__item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-glow);
+    }
+    .stats__item h3 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+    .stats__item p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    /* ========== SERVICES ========== */
+    .services { background: var(--gray-50); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      border: 1px solid var(--gray-100);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--cyan));
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+    .service-card__icon--blue { background: linear-gradient(135deg, var(--accent), #60a5fa); }
+    .service-card__icon--cyan { background: linear-gradient(135deg, var(--cyan), #22d3ee); }
+    .service-card__icon--green { background: linear-gradient(135deg, var(--green), #34d399); }
+    .service-card__icon--purple { background: linear-gradient(135deg, var(--purple), #a78bfa); }
+    .service-card__icon--orange { background: linear-gradient(135deg, var(--orange), #fbbf24); }
+    .service-card__icon--red { background: linear-gradient(135deg, var(--red), #f87171); }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      color: var(--gray-500);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .service-card__tag {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 4px 12px;
+      background: var(--gray-50);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-500);
+    }
+
+    /* ========== WHY US ========== */
+    .why-us { background: var(--white); }
+    .why-us-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .why-us-split__image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+    .why-us-split__image img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+    }
+    .why-us-split__image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-lg);
+      border: 2px solid rgba(59,130,246,0.15);
+    }
+
+    .why-us__list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 32px;
+    }
+    .why-us__item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .why-us__icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .why-us__content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+    .why-us__content p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+    }
+
+    /* ========== GALLERY ========== */
+    .gallery-strip {
+      padding: 0;
+      overflow: hidden;
+      background: var(--gray-50);
+    }
+    .gallery-strip__track {
+      display: flex;
+      gap: 8px;
+      animation: scroll-gallery 30s linear infinite;
+    }
+    .gallery-strip__track img {
+      width: 320px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    @keyframes scroll-gallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========== PROCESS ========== */
+    .process { background: var(--gray-50); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      position: relative;
+    }
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    .process-step__num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .process-step h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+    .process-step p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+    }
+
+    /* ========== CTA ========== */
+    .cta-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 50%, #16213e 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .cta-banner .container { position: relative; z-index: 1; }
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+      padding: 60px 0 30px;
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer__brand p {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .footer__col h4 {
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .footer__col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer__col a {
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .footer__col a:hover { color: var(--accent); }
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .footer__socials {
+      display: flex;
+      gap: 16px;
+    }
+    .footer__socials a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .footer__socials a:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    /* ========== CHATBOT ========== */
+    .chatbot-toggle {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 25px rgba(59,130,246,0.4);
+      z-index: 9999;
+      transition: var(--transition);
+      animation: bounce-in 0.6s ease 1s both;
+    }
+    .chatbot-toggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 35px rgba(59,130,246,0.5);
+    }
+    .chatbot-toggle .badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 18px;
+      height: 18px;
+      background: var(--red);
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse-badge 2s infinite;
+    }
+
+    @keyframes bounce-in {
+      from { opacity: 0; transform: scale(0.5) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes pulse-badge {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .chatbot {
+      position: fixed;
+      bottom: 100px;
+      right: 28px;
+      width: 400px;
+      max-height: 560px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      z-index: 9998;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: scale(0.9) translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+    .chatbot.open {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .chatbot__header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .chatbot__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .chatbot__header-info h4 {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .chatbot__header-info p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+    }
+    .chatbot__header-info .status-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-right: 4px;
+      animation: blink 2s infinite;
+    }
+    .chatbot__close {
+      margin-left: auto;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: rgba(255,255,255,0.6);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .chatbot__close:hover {
+      background: rgba(255,255,255,0.2);
+      color: var(--white);
+    }
+
+    .chatbot__messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 300px;
+      max-height: 350px;
+      scroll-behavior: smooth;
+    }
+
+    .chat-msg {
+      display: flex;
+      gap: 10px;
+      max-width: 85%;
+      animation: fadeInUp 0.3s ease;
+    }
+    .chat-msg--bot { align-self: flex-start; }
+    .chat-msg--user { align-self: flex-end; flex-direction: row-reverse; }
+
+    .chat-msg__avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+    .chat-msg--bot .chat-msg__avatar {
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      color: var(--white);
+    }
+    .chat-msg--user .chat-msg__avatar {
+      background: var(--gray-200);
+      color: var(--gray-600);
+    }
+
+    .chat-msg__bubble {
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .chat-msg--bot .chat-msg__bubble {
+      background: var(--gray-50);
+      color: var(--gray-700);
+      border-bottom-left-radius: 4px;
+    }
+    .chat-msg--user .chat-msg__bubble {
+      background: var(--accent);
+      color: var(--white);
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-msg__quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .quick-reply {
+      padding: 6px 14px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .quick-reply:hover {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+    }
+
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      padding: 12px 16px;
+      background: var(--gray-50);
+      border-radius: 16px;
+      width: fit-content;
+    }
+    .typing-indicator span {
+      width: 7px;
+      height: 7px;
+      background: var(--gray-300);
+      border-radius: 50%;
+      animation: typing-bounce 1.4s infinite;
+    }
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typing-bounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-6px); }
+    }
+
+    .chatbot__input {
+      padding: 16px 20px;
+      border-top: 1px solid var(--gray-100);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .chatbot__input input {
+      flex: 1;
+      border: 1px solid var(--gray-200);
+      border-radius: 50px;
+      padding: 10px 18px;
+      font-size: 0.88rem;
+      font-family: var(--font-main);
+      outline: none;
+      transition: var(--transition);
+    }
+    .chatbot__input input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+    .chatbot__input button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+    .chatbot__input button:hover { background: var(--accent-hover); }
+
+    /* ========== SCROLL ANIMATIONS ========== */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .animate-delay-1 { transition-delay: 0.1s; }
+    .animate-delay-2 { transition-delay: 0.2s; }
+    .animate-delay-3 { transition-delay: 0.3s; }
+    .animate-delay-4 { transition-delay: 0.4s; }
+    .animate-delay-5 { transition-delay: 0.5s; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-us-split { grid-template-columns: 1fr; gap: 40px; }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .header__nav, .header__cta { display: none; }
+      .mobile-toggle { display: flex; }
+      .stats__grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .hero__title { font-size: 2.2rem; }
+      .chatbot { width: calc(100% - 32px); right: 16px; bottom: 90px; }
+      .footer__bottom { flex-direction: column; gap: 16px; text-align: center; }
+
+      /* Mobile nav */
+      .header__nav.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 24px;
+        gap: 20px;
+      }
+      .header__nav.mobile-open + .header__cta {
+        display: flex;
+        position: absolute;
+        top: calc(100% + 160px);
+        left: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .stats__item { padding: 20px 12px; }
+      .stats__item h3 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#" class="header__logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#logo-grad)"/>
+          <path d="M8 22L16 8L24 22H8Z" fill="white" opacity="0.9"/>
+          <defs><linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+        </svg>
+        Aitken<span>Tech</span>
+      </a>
+
+      <nav>
+        <ul class="header__nav" id="nav">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__cta">
+        <a href="#contact" class="btn btn--primary">Get a Quote</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__particles">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hero__grid-bg"></div>
+      <div class="hero__glow"></div>
+
+      <div class="hero__content container">
+        <div class="hero__badge">
+          <span class="dot"></span>
+          Trusted IT Solutions Provider
+        </div>
+        <h1 class="hero__title">Powering Your Business With <span>Smart Technology</span></h1>
+        <p class="hero__text">From CCTV installations to enterprise networking, cybersecurity, and IT procurement &mdash; we deliver end-to-end technology solutions that keep your business secure and connected.</p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary">Request a Consultation</a>
+          <a href="#services" class="btn btn--outline">Our Services</a>
+        </div>
+      </div>
+
+      <svg class="hero__wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="currentColor" d="M0,40 C360,100 1080,0 1440,60 L1440,100 L0,100 Z"/>
+      </svg>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats section--sm">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stats__item animate-on-scroll">
+            <h3>200+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stats__item animate-on-scroll animate-delay-1">
+            <h3>50+</h3>
+            <p>Business Clients</p>
+          </div>
+          <div class="stats__item animate-on-scroll animate-delay-2">
+            <h3>99.9%</h3>
+            <p>Network Uptime</p>
+          </div>
+          <div class="stats__item animate-on-scroll animate-delay-3">
+            <h3>24/7</h3>
+            <p>Support Available</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="label">What We Do</span>
+          <h2>Our IT Services</h2>
+          <p>Comprehensive technology solutions tailored to protect, connect, and empower your business operations.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card animate-on-scroll">
+            <div class="service-card__icon service-card__icon--blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h3>CCTV Installation</h3>
+            <p>Professional surveillance system design, installation, and monitoring. IP cameras, NVRs, remote viewing, and 24/7 recording for complete property security.</p>
+            <span class="service-card__tag">Security</span>
+          </div>
+          <div class="service-card animate-on-scroll animate-delay-1">
+            <div class="service-card__icon service-card__icon--cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3>Network Infrastructure</h3>
+            <p>Enterprise network design, structured cabling, switches, routers, and wireless access point deployment. Full LAN/WAN architecture for any scale.</p>
+            <span class="service-card__tag">Networking</span>
+          </div>
+          <div class="service-card animate-on-scroll animate-delay-2">
+            <div class="service-card__icon service-card__icon--green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            </div>
+            <h3>Network Upgrades</h3>
+            <p>Upgrade legacy infrastructure to modern standards. Fibre optic migration, bandwidth optimization, and network performance tuning.</p>
+            <span class="service-card__tag">Upgrades</span>
+          </div>
+          <div class="service-card animate-on-scroll animate-delay-3">
+            <div class="service-card__icon service-card__icon--purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>API & Cybersecurity</h3>
+            <p>API security audits, penetration testing, firewall configuration, endpoint protection, and vulnerability management to safeguard your digital assets.</p>
+            <span class="service-card__tag">Security</span>
+          </div>
+          <div class="service-card animate-on-scroll animate-delay-4">
+            <div class="service-card__icon service-card__icon--orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>IT Procurement</h3>
+            <p>Source and supply enterprise-grade hardware and software. Servers, workstations, networking equipment, and licensed software at competitive prices.</p>
+            <span class="service-card__tag">Procurement</span>
+          </div>
+          <div class="service-card animate-on-scroll animate-delay-5">
+            <div class="service-card__icon service-card__icon--red">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Managed IT Services</h3>
+            <p>Proactive monitoring, helpdesk support, system administration, cloud management, and IT strategy consulting to keep your operations running smoothly.</p>
+            <span class="service-card__tag">Managed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+      <div class="container">
+        <div class="why-us-split">
+          <div class="why-us-split__image animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" alt="Modern server room with blue lighting" loading="lazy" width="800" height="600">
+          </div>
+          <div class="why-us-split__content">
+            <span class="label">Why Aitken Technology</span>
+            <h2>Your Trusted IT Partner</h2>
+            <p style="color: var(--gray-500);">We combine deep technical expertise with a commitment to delivering reliable, scalable, and secure solutions.</p>
+            <div class="why-us__list">
+              <div class="why-us__item animate-on-scroll">
+                <div class="why-us__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div class="why-us__content">
+                  <h3>Certified Professionals</h3>
+                  <p>Industry-certified engineers with expertise across all major platforms and vendors.</p>
+                </div>
+              </div>
+              <div class="why-us__item animate-on-scroll animate-delay-1">
+                <div class="why-us__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="why-us__content">
+                  <h3>Rapid Response Time</h3>
+                  <p>Fast deployment and 24/7 emergency support to minimize your downtime.</p>
+                </div>
+              </div>
+              <div class="why-us__item animate-on-scroll animate-delay-2">
+                <div class="why-us__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="why-us__content">
+                  <h3>Security-First Approach</h3>
+                  <p>Every solution is built with cybersecurity best practices from the ground up.</p>
+                </div>
+              </div>
+              <div class="why-us__item animate-on-scroll animate-delay-3">
+                <div class="why-us__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div class="why-us__content">
+                  <h3>Competitive Pricing</h3>
+                  <p>Transparent quotes with no hidden costs. Enterprise quality at fair prices.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-strip" aria-label="Technology gallery">
+      <div class="gallery-strip__track">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80" alt="Server room" loading="lazy" width="320" height="200">
+        <img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8c?w=500&q=80" alt="CCTV cameras" loading="lazy" width="320" height="200">
+        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&q=80" alt="Network cables" loading="lazy" width="320" height="200">
+        <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=500&q=80" alt="Network switch" loading="lazy" width="320" height="200">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&q=80" alt="Cybersecurity" loading="lazy" width="320" height="200">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80" alt="Server room" loading="lazy" width="320" height="200">
+        <img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8c?w=500&q=80" alt="CCTV cameras" loading="lazy" width="320" height="200">
+        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&q=80" alt="Network cables" loading="lazy" width="320" height="200">
+        <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=500&q=80" alt="Network switch" loading="lazy" width="320" height="200">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&q=80" alt="Cybersecurity" loading="lazy" width="320" height="200">
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-header">
+          <span class="label">How We Work</span>
+          <h2>Our Process</h2>
+          <p>A structured approach to delivering technology solutions that meet your exact requirements.</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step animate-on-scroll">
+            <div class="process-step__num">1</div>
+            <h3>Consultation</h3>
+            <p>We assess your current infrastructure, understand your business goals, and identify opportunities.</p>
+          </div>
+          <div class="process-step animate-on-scroll animate-delay-1">
+            <div class="process-step__num">2</div>
+            <h3>Design & Plan</h3>
+            <p>Our engineers design a tailored solution with detailed scope, timeline, and transparent pricing.</p>
+          </div>
+          <div class="process-step animate-on-scroll animate-delay-2">
+            <div class="process-step__num">3</div>
+            <h3>Implementation</h3>
+            <p>Professional deployment with minimal disruption to your daily operations.</p>
+          </div>
+          <div class="process-step animate-on-scroll animate-delay-3">
+            <div class="process-step__num">4</div>
+            <h3>Support & Monitor</h3>
+            <p>Ongoing monitoring, maintenance, and 24/7 support to keep everything running perfectly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner" id="contact">
+      <div class="container">
+        <h2>Ready to Upgrade Your Technology?</h2>
+        <p>Get a free consultation and discover how Aitken Technology can transform your IT infrastructure.</p>
+        <a href="mailto:info@aitkentech.com" class="btn btn--white">Get Your Free Quote</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="header__logo" style="font-size:1.2rem;">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="url(#logo-grad2)"/><path d="M8 22L16 8L24 22H8Z" fill="white" opacity="0.9"/><defs><linearGradient id="logo-grad2" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs></svg>
+            Aitken<span>Tech</span>
+          </a>
+          <p>Professional IT solutions for businesses of all sizes. CCTV, networking, cybersecurity, and IT procurement delivered by certified experts.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">CCTV Installation</a></li>
+            <li><a href="#services">Network Infrastructure</a></li>
+            <li><a href="#services">API Security</a></li>
+            <li><a href="#services">IT Procurement</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#why-us">About Us</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li>info@aitkentech.com</li>
+            <li>+1 (876) 555-0123</li>
+            <li>Kingston, Jamaica</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Aitken Technology. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot Toggle -->
+  <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open chat">
+    <span class="badge">1</span>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </button>
+
+  <!-- Chatbot Widget -->
+  <div class="chatbot" id="chatbot">
+    <div class="chatbot__header">
+      <div class="chatbot__avatar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M18 14a6 6 0 0 0-12 0v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4z"/></svg>
+      </div>
+      <div class="chatbot__header-info">
+        <h4>Aitken AI Assistant</h4>
+        <p><span class="status-dot"></span>Online &mdash; Typically replies instantly</p>
+      </div>
+      <button class="chatbot__close" id="chatbot-close" aria-label="Close chat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="chatbot__messages" id="chatbot-messages"></div>
+
+    <div class="chatbot__input">
+      <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off">
+      <button id="chatbot-send" aria-label="Send message">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // ========== HEADER SCROLL ==========
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ========== MOBILE NAV ==========
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const nav = document.getElementById('nav');
+    mobileToggle.addEventListener('click', () => nav.classList.toggle('mobile-open'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('mobile-open')));
+
+    // ========== SCROLL ANIMATIONS ==========
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // ========== CHATBOT ==========
+    const chatToggle = document.getElementById('chatbot-toggle');
+    const chatWidget = document.getElementById('chatbot');
+    const chatClose = document.getElementById('chatbot-close');
+    const chatMessages = document.getElementById('chatbot-messages');
+    const chatInput = document.getElementById('chatbot-input');
+    const chatSend = document.getElementById('chatbot-send');
+
+    let chatOpen = false;
+    let firstOpen = true;
+
+    function toggleChat() {
+      chatOpen = !chatOpen;
+      chatWidget.classList.toggle('open', chatOpen);
+      if (chatOpen && firstOpen) {
+        firstOpen = false;
+        chatToggle.querySelector('.badge').style.display = 'none';
+        showBotMessage("Hi there! I'm the Aitken Technology AI assistant. How can I help you today?", [
+          "CCTV Installation",
+          "Network Setup",
+          "Get a Quote",
+          "Cybersecurity"
+        ]);
+      }
+      if (chatOpen) chatInput.focus();
+    }
+
+    chatToggle.addEventListener('click', toggleChat);
+    chatClose.addEventListener('click', toggleChat);
+
+    // Knowledge base
+    const knowledge = {
+      greetings: {
+        patterns: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'greetings', 'sup', 'yo'],
+        response: "Hello! Welcome to Aitken Technology. I'm here to help you with any IT needs — from CCTV and networking to cybersecurity and IT procurement. What can I assist you with?"
+      },
+      cctv: {
+        patterns: ['cctv', 'camera', 'surveillance', 'security camera', 'video', 'recording', 'nvr', 'dvr', 'monitoring', 'ip camera'],
+        response: "We provide complete CCTV solutions including:\n\n- **IP Camera Systems** (indoor & outdoor)\n- **NVR/DVR Setup** with cloud & local storage\n- **Remote Viewing** via mobile app\n- **Motion Detection & Alerts**\n- **Night Vision & 4K Options**\n\nWe handle site surveys, installation, and ongoing maintenance. Would you like a free site assessment?"
+      },
+      network: {
+        patterns: ['network', 'networking', 'lan', 'wan', 'wifi', 'wireless', 'internet', 'router', 'switch', 'cabling', 'cable', 'fibre', 'fiber', 'ethernet', 'access point', 'network setup'],
+        response: "Our networking services include:\n\n- **Structured Cabling** (Cat6/Cat6a/Fibre)\n- **Enterprise WiFi Solutions**\n- **Router & Switch Configuration**\n- **Network Design & Architecture**\n- **VPN & Remote Access Setup**\n- **Network Monitoring & Troubleshooting**\n\nWhether it's a small office or multi-site enterprise, we've got you covered. Shall I arrange a consultation?"
+      },
+      upgrade: {
+        patterns: ['upgrade', 'improve', 'slow network', 'speed', 'bandwidth', 'performance', 'outdated', 'legacy', 'migration'],
+        response: "We specialize in network upgrades:\n\n- **Bandwidth Optimization**\n- **Legacy to Modern Infrastructure Migration**\n- **Fibre Optic Upgrades**\n- **WiFi 6/6E Deployments**\n- **Server & Hardware Refresh**\n\nWe'll assess your current setup and recommend cost-effective improvements. Want us to do a free network audit?"
+      },
+      security: {
+        patterns: ['security', 'cybersecurity', 'cyber', 'api', 'firewall', 'hack', 'breach', 'vulnerability', 'penetration', 'pentest', 'endpoint', 'antivirus', 'threat', 'protect'],
+        response: "Our cybersecurity services cover:\n\n- **API Security Audits**\n- **Firewall Configuration & Management**\n- **Penetration Testing**\n- **Endpoint Protection**\n- **Security Awareness Training**\n- **Incident Response Planning**\n\nWe take a security-first approach to keep your business safe. Would you like to discuss your security needs?"
+      },
+      procurement: {
+        patterns: ['procurement', 'buy', 'purchase', 'device', 'hardware', 'software', 'laptop', 'computer', 'server', 'equipment', 'supply', 'vendor'],
+        response: "We handle full IT procurement:\n\n- **Servers & Workstations**\n- **Networking Equipment** (Cisco, Ubiquiti, Fortinet)\n- **Laptops & Desktops**\n- **Licensed Software**\n- **Printers & Peripherals**\n\nWe source enterprise-grade equipment at competitive prices with warranty support. What equipment are you looking for?"
+      },
+      quote: {
+        patterns: ['quote', 'price', 'cost', 'how much', 'pricing', 'estimate', 'budget', 'afford', 'rate'],
+        response: "We'd love to give you a quote! To provide an accurate estimate, we'll need a few details:\n\n1. **What service** are you interested in?\n2. **Size of your business** (number of users/locations)\n3. **Any specific requirements?**\n\nYou can email us at **info@aitkentech.com** or call **+1 (876) 555-0123** for a free consultation. Or tell me more here and I'll point you in the right direction!"
+      },
+      managed: {
+        patterns: ['managed', 'support', 'helpdesk', 'maintenance', 'monitoring', 'outsource', 'it support', 'sla', 'managed service'],
+        response: "Our Managed IT Services include:\n\n- **24/7 Monitoring & Alerting**\n- **Helpdesk Support**\n- **System Administration**\n- **Cloud Management**\n- **Backup & Disaster Recovery**\n- **IT Strategy Consulting**\n\nWe act as your dedicated IT department. Would you like to learn about our service plans?"
+      },
+      contact: {
+        patterns: ['contact', 'phone', 'email', 'call', 'reach', 'address', 'location', 'office', 'visit'],
+        response: "You can reach Aitken Technology at:\n\n- **Email:** info@aitkentech.com\n- **Phone:** +1 (876) 555-0123\n- **Location:** Kingston, Jamaica\n- **Hours:** Mon-Fri, 8AM - 6PM\n\nWe also offer 24/7 emergency support for managed service clients!"
+      },
+      thanks: {
+        patterns: ['thank', 'thanks', 'appreciate', 'helpful', 'great', 'awesome', 'perfect'],
+        response: "You're welcome! We're always happy to help. If you need anything else, feel free to ask. You can also reach us directly at info@aitkentech.com or call +1 (876) 555-0123. Have a great day!"
+      }
+    };
+
+    function findResponse(input) {
+      const lower = input.toLowerCase().trim();
+
+      for (const [key, data] of Object.entries(knowledge)) {
+        for (const pattern of data.patterns) {
+          if (lower.includes(pattern)) {
+            return data.response;
+          }
+        }
+      }
+
+      return "Thanks for your message! I'd be happy to help with that. Our team specializes in **CCTV installation**, **network infrastructure**, **cybersecurity**, **IT procurement**, and **managed IT services**.\n\nCould you tell me more about what you're looking for? Or you can reach our team directly at **info@aitkentech.com**.";
+    }
+
+    function showBotMessage(text, quickReplies = []) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = 'chat-msg chat-msg--bot';
+      const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+      msgDiv.innerHTML = `
+        <div class="chat-msg__avatar">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M18 14a6 6 0 0 0-12 0v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4z"/></svg>
+        </div>
+        <div>
+          <div class="chat-msg__bubble">${formattedText}</div>
+          ${quickReplies.length ? `<div class="chat-msg__quick-replies">${quickReplies.map(r => `<button class="quick-reply" onclick="sendMessage('${r}')">${r}</button>`).join('')}</div>` : ''}
+        </div>
+      `;
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function showUserMessage(text) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = 'chat-msg chat-msg--user';
+      msgDiv.innerHTML = `
+        <div class="chat-msg__avatar">U</div>
+        <div class="chat-msg__bubble">${text}</div>
+      `;
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function showTyping() {
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'chat-msg chat-msg--bot';
+      typingDiv.id = 'typing';
+      typingDiv.innerHTML = `
+        <div class="chat-msg__avatar">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M18 14a6 6 0 0 0-12 0v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4z"/></svg>
+        </div>
+        <div class="typing-indicator"><span></span><span></span><span></span></div>
+      `;
+      chatMessages.appendChild(typingDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function removeTyping() {
+      const typing = document.getElementById('typing');
+      if (typing) typing.remove();
+    }
+
+    function sendMessage(text) {
+      const msg = text || chatInput.value.trim();
+      if (!msg) return;
+
+      showUserMessage(msg);
+      chatInput.value = '';
+      showTyping();
+
+      const delay = 600 + Math.random() * 800;
+      setTimeout(() => {
+        removeTyping();
+        const response = findResponse(msg);
+        const quickReplies = getQuickReplies(msg);
+        showBotMessage(response, quickReplies);
+      }, delay);
+    }
+
+    function getQuickReplies(input) {
+      const lower = input.toLowerCase();
+      if (lower.includes('cctv') || lower.includes('camera')) return ['Get a Quote', 'Network Setup', 'Contact Us'];
+      if (lower.includes('network')) return ['Get a Quote', 'CCTV Installation', 'Cybersecurity'];
+      if (lower.includes('security') || lower.includes('cyber') || lower.includes('api')) return ['Get a Quote', 'Network Setup', 'Contact Us'];
+      if (lower.includes('quote') || lower.includes('price')) return ['CCTV', 'Networking', 'Cybersecurity', 'Contact Us'];
+      return ['Our Services', 'Get a Quote', 'Contact Us'];
+    }
+
+    chatSend.addEventListener('click', () => sendMessage());
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+  </script>
+
+</body>
+</html>
